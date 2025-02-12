@@ -1,8 +1,13 @@
-express = require("express");
-
+const express = require("express");
 const app = express();
+const auth = require("./authorize");
 
-app.get("/get_id", (req, res) => {
+app.use(auth);
+
+//---------------------------------------------------------------
+
+// each route handler is a middleware
+app.get("/admin/get_id", (req, res) => {
   res.send({ id: "1234" });
 });
 
@@ -35,7 +40,5 @@ app.get("/get_id_next", (req, res, next) => {
 app.get("/get_id_next", (req, res) => {
   res.send({ name: "John" });
 });
-
-// each route handler is a middleware
 
 module.exports = app;
