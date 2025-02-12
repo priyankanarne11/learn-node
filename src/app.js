@@ -1,14 +1,8 @@
-express = require("express");
-
+const express = require("express");
 const app = express();
+const useRoutes = require("./use");
 
-// ordering of these routes is important
-// if you use app.use() and if the route matches then it
-// will not go to the next route even though you expect it
-// to match based on http metho
-app.use("/test", (req, res) => {
-  res.send("Hello World");
-});
+app.use(useRoutes);
 
 app.get("/get_id", (req, res) => {
   res.send({ id: "1234" });
