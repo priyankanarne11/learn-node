@@ -18,6 +18,9 @@
   "homepage": "https://github.com/priyankanarne11/learn-node#readme",
   "dependencies": {
     "express": "^4.21.2",
+    "learn-node": "file:",
+    "mongodb": "^6.13.0",
+    "mongoose": "^8.10.1",
     "nodemon": "^3.1.9"
   }
 }
